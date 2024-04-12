@@ -151,15 +151,15 @@
             // Display the results.
             const percent = `${(sum * 100).toFixed(0)}%`;
 
-            let b = "Yes";
+            let b = "Yes! This is promising. Stay open minded and flexible";
             if (sum < 0.5 && sum > 0.46) {
-              b = `No, but a close call.`;
-            } else if (sum < 0.48) {
-              b = `No.`;
+              b = `This is a close call, but some reiteration can make it work.`;
+            } else if (sum < 0.45) {
+              b = `No, Consider rethinking the key aspects and/or a pivot.`;
             } else if (sum > 0.5 && sum < 0.54) {
-              b = `Yes, but a close call.`;
+              b = `Yes, but remain cautious. Be open to a pivot if needed.`;
             } else if (sum === 0.5) {
-              b = "50-50. Go with the gut.";
+              b = "50-50. This can go either way. Go with your gut.";
             }
 
             document.querySelector(".answer .percent").innerText = percent;
