@@ -1,202 +1,239 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
+  <head>
     <meta charset="utf-8" />
-    <title>Don't build (or build) that feature</title>
-    <meta name="description" content="A simple, opinionated decision system to help decide whether to build a software feature or not." />
-    <link rel="shortcut icon" href="https://dont.build/favicon.png" />
-    <meta property="og:image" content="https://dont.build/thumb.png">
+    <title>Don't launch (or launch) that startup</title>
+    <meta
+      name="description"
+      content="A simple, opinionated decision system to help decide whether to launch a start (or pivot from one) or not."
+    />
+    <link rel="shortcut icon" href="https://dont.startup/favicon.png" />
+    <meta property="og:image" content="https://dont.startup/thumb.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="style.css?v=2" rel="stylesheet" type="text/css" />
-</head>
-<body>
-
-<div class="container">
-    <section class="box">
+  </head>
+  <body>
+    <div class="container">
+      <section class="box">
         <p class="help">1: Low, 10: High</p>
-        <h1 class="title">Don't build (or build) that feature</h1>
-        <p>A simple, opinionated tool for helping decide whether a software feature is worth building.</p>
+        <h1 class="title">Don't launch (or launch) that startup</h1>
+        <p>
+          A simple, opinionated tool for helping decide whether a startup is
+          worth working on.
+        </p>
         <br />
         <form class="form">
-            <fieldset class="p-users">
+          <fieldset class="p-users">
+            <span class="value"></span>
+            <label>How big does this idea seem to be? </label>
+            <input type="range" min="1" max="10" step="0.5" value="5.5" />
+          </fieldset>
+          <fieldset class="p-effort">
+            <span class="value"></span>
+            <label
+              >Do you have founder market fit? (Deep knowledge and Understanding
+              of the market, and some work experience)</label
+            >
+            <input type="range" min="1" max="10" step="0.5" value="5.5" />
+          </fieldset>
+          <fieldset class="p-user-value">
+            <span class="value"></span>
+            <label>How easy is it to get started on this idea? </label>
+            <input type="range" min="1" max="10" step="0.5" value="5.5" />
+          </fieldset>
+          <fieldset class="p-operational-complexity">
+            <span class="value"></span>
+            <label>What is the early market feedback from customers?</label>
+            <input type="range" min="1" max="10" step="0.5" value="5.5" />
+          </fieldset>
+          <fieldset class="p-feature-value">
+            <span class="value"></span>
+            <label
+              >How acute is this problem? (ranging from no one cares about it to
+              there are literally no alternatives to my solution)</label
+            >
+            <input type="range" min="1" max="10" step="0.5" value="5.5" />
+          </fieldset>
+          <!-- <fieldset class="p-negative-impact">
                 <span class="value"></span>
-                <label>What proportion of users (1 = a small proportion, 10 = all users) are likely to use the feature?</label>
+                <label>How scalable is this business? </label>
                 <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset> 
-            <fieldset class="p-effort">
-                <span class="value"></span>
-                <label>What is the time, technical effort, and cost to build the feature?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset>
-            <fieldset class="p-user-value">
-                <span class="value"></span>
-                <label>How important are the target users to the existing product?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset>
-            <fieldset class="p-operational-complexity">
-                <span class="value"></span>
-                <label>What is the operational / business complexity of the feature?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset>
-            <fieldset class="p-feature-value">
-                <span class="value"></span>
-                <label>How valuable is the feature to the target users, truly?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset>
-            <fieldset class="p-negative-impact">
-                <span class="value"></span>
-                <label>How much potential technical risk can the feature bring to the rest of the product?</label>
-                <input type="range" min="1" max="10" step="0.5" value="5.5" />
-            </fieldset>
+            </fieldset> -->
         </form>
         <div class="text-center">
           <button id="btn-toggle-answer">Show answer</button>
         </div>
         <div class="answer hide">
-            <h1><span><span class="bool"></span> (<span class="percent"></span>)</span></h1>
-            <textarea class="summary" readonly></textarea>
-            <textarea hidden class="md-summary" readonly></textarea>
-            <button class="copy">Copy</button>
-            <button class="copy-md">Copy as Markdown</button>
+          <h1>
+            <span
+              ><span class="bool"></span> (<span class="percent"></span>)</span
+            >
+          </h1>
+          <textarea class="summary" readonly></textarea>
+          <textarea hidden class="md-summary" readonly></textarea>
+          <button class="copy">Copy</button>
+          <button class="copy-md">Copy as Markdown</button>
         </div>
-    </section>
+      </section>
 
-    <noscript><h1>This page requires Javascript to function.</h1></noscript>
+      <noscript><h1>This page requires Javascript to function.</h1></noscript>
 
-    <section>
+      <section>
         <p>
-            Technical decisions are often about being as less-wrong as possible than being right.
-            Decision parameters themselves are dependent on even more parameters, such as the business environment, expertise, team and user culture,
-            cost ... There is no one-size-fits all framework for making technical decisions, especially when it comes
-            to adding a new feature to a product as they often (rightly) tend to be subjective bets than scientific conclusions.
+          The allure of entrepreneurship has never been greater. Startups are
+          one of the very few ways to make it (really, really) big in life.
+          There's a LOT of content on the whys and hows of starting your
+          venture. Almost everyone seems to have a vision for the next big thing
+          - a product or service that will change the world.
         </p>
         <p>
-            This is one opinionated decision making system (a highly simplified version of it) that tries to bring in
-            elements of objectivity to making feature decisions in software products. This system has worked pretty well for me personally
-            and at work, <a href="https://zerodha.com">Zerodha</a>. So, it might work for others too. View this page's source for the logic and rationale. 
-            Context:
-            <a href="https://zerodha.tech/blog/hello-world/">[1]</a>
-            <a href="https://zerodha.tech/blog/scaling-with-common-sense/">[2]</a>
-            <a href="https://zerodha.tech/blog/being-future-ready-with-common-sense/">[3]</a>
-            <a href="https://nadh.in/blog/fomo-yamo/">[4]</a>
+          Hence, it becomes more important than ever to acknowledge the reality
+          of the startup landscape. Up to 90% of startups fail. It is very easy for founders to get swept away by their dreams of
+          success, and more importantly the Innovator's bias - founders becoming
+          overly attached to their ideas, in the face of contradictory evidence.
+          <br><br>
+          <a href= "https://hbr.org/2008/02/the-founders-dilemma">The Founder's Dilemma</a>
+          <br>
+          <a href="https://www.emerald.com/insight/content/doi/10.1108/NEJE-07-2019-0031/full/html">Overconfidence in entrepreneurs</a>
         </p>
-    </section>
-    
-    <footer><a href="https://nadh.in">Kailash Nadh</a> &mdash; 2022 / <a href="https://github.com/knadh/dont.build">GitHub</a></footer>
-</div>
+        <p>
+          This is an opinionated decision making system that tries to help
+          evaluate startup ideas, and help you decide if you should launch that
+          startup(or pivot, respectively). It tries to bring in objective
+          elements that I've gathered by reading on this topic into the process
+          of evaluating startup ideas.
+        </p>
+      </section>
 
+      <footer>
+        Inspired fork from <a href="https://dont.build">dont.build</a> &mdash;
+        2024 / <a href="https://github.com/ansharora28/dont.startup">GitHub</a>
+      </footer>
+    </div>
 
-<script>
-(function() {
-    const params = [
-        { weight: 0.10, value: 5.5, negative: false, name: 'p-users', },
-        { weight: 0.20, value: 5.5, negative: false, name: 'p-user-value',},
-        { weight: 0.20, value: 5.5, negative: false, name: 'p-feature-value',},
-        { weight: 0.15, value: 5.5, negative: true,  name: 'p-effort', },
-        { weight: 0.20, value: 5.5, negative: true,  name: 'p-negative-impact',},
-        { weight: 0.15, value: 5.5, negative: true,  name: 'p-operational-complexity',},
-    ]
+    <script>
+      (function () {
+        const params = [
+          { weight: 0.1, value: 5.5, negative: false, name: "p-users" },
+          { weight: 0.2, value: 5.5, negative: false, name: "p-user-value" },
+          { weight: 0.2, value: 5.5, negative: false, name: "p-feature-value" },
+          { weight: 0.15, value: 5.5, negative: true, name: "p-effort" },
+          {
+            weight: 0.2,
+            value: 5.5,
+            negative: true,
+            name: "p-negative-impact",
+          },
+          {
+            weight: 0.15,
+            value: 5.5,
+            negative: true,
+            name: "p-operational-complexity",
+          },
+        ];
 
-    params.forEach((p, n) => {
-        let net = 0;
-        const inp = document.querySelector(`.${p.name} input`);
+        params.forEach((p, n) => {
+          let net = 0;
+          const inp = document.querySelector(`.${p.name} input`);
 
-        inp.value = p.value;
-        inp.oninput = (e) => {
+          inp.value = p.value;
+          inp.oninput = (e) => {
             const val = parseFloat(e.target.value, 64);
             document.querySelector(`.${p.name} .value`).innerText = val;
             p.value = val;
 
             // Sum all weighted params.
             const sum = params.reduce((prev, pm) => {
-                let v = pm.value;
-                if (pm.negative) {
-                    v = 10 - v;
-                }
+              let v = pm.value;
+              if (pm.negative) {
+                v = 10 - v;
+              }
 
-                return prev + (v / 10 * pm.weight);
+              return prev + (v / 10) * pm.weight;
             }, 0);
 
             // Display the results.
-            const percent = `${(sum * 100).toFixed(0)}%`
+            const percent = `${(sum * 100).toFixed(0)}%`;
 
-            let b = 'Yes';
+            let b = "Yes";
             if (sum < 0.5 && sum > 0.46) {
-                b = `No, but a close call.`;
+              b = `No, but a close call.`;
             } else if (sum < 0.48) {
-                b = `No.`;
+              b = `No.`;
             } else if (sum > 0.5 && sum < 0.54) {
-                b = `Yes, but a close call.`;
-            } else if(sum === 0.5) {
-                b = '50-50. Go with the gut.';
+              b = `Yes, but a close call.`;
+            } else if (sum === 0.5) {
+              b = "50-50. Go with the gut.";
             }
 
             document.querySelector(".answer .percent").innerText = percent;
             document.querySelector(".answer .bool").innerText = b;
 
             // Print the summary in the textbox.
-            let summary = '';
-            let mdSummary = '||Question|Answer|\n|---|---|---|\n';
+            let summary = "";
+            let mdSummary = "||Question|Answer|\n|---|---|---|\n";
             document.querySelectorAll(".form fieldset").forEach((f, n) => {
-                summary += `${n + 1}. ${f.querySelector("label").innerText} = ${f.querySelector("input").value}\n`;
-                mdSummary += `|${n + 1}|${f.querySelector("label").innerText}|${f.querySelector("input").value}|\n`;
+              summary += `${n + 1}. ${f.querySelector("label").innerText} = ${
+                f.querySelector("input").value
+              }\n`;
+              mdSummary += `|${n + 1}|${f.querySelector("label").innerText}|${
+                f.querySelector("input").value
+              }|\n`;
             });
             summary += `\n=> ${b} (${percent})`;
             mdSummary += `||Result:|${b} (${percent})|`;
-            document.querySelector('.summary').value = summary;
-            document.querySelector('.md-summary').value = mdSummary;
+            document.querySelector(".summary").value = summary;
+            document.querySelector(".md-summary").value = mdSummary;
+          };
+
+          inp.dispatchEvent(new Event("input"));
+        });
+      })();
+
+      (function () {
+        const ans = document.querySelector(".answer");
+        const btn = document.querySelector("#btn-toggle-answer");
+
+        btn.addEventListener("click", function () {
+          if (ans.style.display === "block") {
+            ans.style.display = "none";
+            btn.innerText = "Show answer";
+          } else {
+            ans.style.display = "block";
+            btn.innerText = "Hide answer";
+          }
+        });
+      })();
+
+      (function () {
+        const copyBtn = document.querySelector(".copy");
+        const copyMdBtn = document.querySelector(".copy-md");
+
+        var copyToClipboard = function (val) {
+          var tempTxt = document.createElement("textarea");
+          tempTxt.value = val;
+          document.body.appendChild(tempTxt);
+          tempTxt.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempTxt);
+
+          let notice = document.createElement("span");
+          notice.className = "notice visible";
+          notice.innerHTML = "Copied to clipboard.";
+          document.body.appendChild(notice);
+          setTimeout(() => {
+            document.body.removeChild(notice);
+          }, 3000);
         };
 
-        inp.dispatchEvent(new Event('input'));
-    });
-})();
+        copyBtn.addEventListener("click", function () {
+          copyToClipboard(document.querySelector(".summary").value);
+        });
 
-(function () {
-    const ans = document.querySelector('.answer');
-    const btn = document.querySelector('#btn-toggle-answer');
-
-    btn.addEventListener('click', function() {
-        if(ans.style.display === 'block') {
-            ans.style.display = 'none';
-            btn.innerText = "Show answer";
-        } else {
-            ans.style.display = 'block';
-            btn.innerText = "Hide answer";
-        }
-    });
-})();
-
-(function () {
-    const copyBtn = document.querySelector('.copy');
-    const copyMdBtn = document.querySelector('.copy-md');
-
-    var copyToClipboard = function(val) {
-        var tempTxt=document.createElement("textarea");
-        tempTxt.value=val;
-        document.body.appendChild(tempTxt);
-        tempTxt.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempTxt);
-
-        let notice = document.createElement("span");
-        notice.className = "notice visible";
-        notice.innerHTML = "Copied to clipboard.";
-        document.body.appendChild(notice);
-        setTimeout(() => {
-            document.body.removeChild(notice);
-        }, 3000);
-    }
-
-    copyBtn.addEventListener('click', function() {
-        copyToClipboard(document.querySelector('.summary').value);
-    });
-
-    copyMdBtn.addEventListener('click', function() {
-        copyToClipboard(document.querySelector('.md-summary').value);
-    });
-})();
-
-</script>
-
-</body>
+        copyMdBtn.addEventListener("click", function () {
+          copyToClipboard(document.querySelector(".md-summary").value);
+        });
+      })();
+    </script>
+  </body>
 </html>
