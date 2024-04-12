@@ -23,12 +23,12 @@
         </p>
         <br />
         <form class="form">
-          <fieldset class="p-users">
+          <fieldset class="p-idea">
             <span class="value"></span>
             <label>How big does this idea seem to be? </label>
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
-          <fieldset class="p-effort">
+          <fieldset class="p-founder-fit">
             <span class="value"></span>
             <label
               >Do you have founder market fit? (Deep knowledge and Understanding
@@ -36,17 +36,17 @@
             >
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
-          <fieldset class="p-user-value">
+          <fieldset class="p-difficulty">
             <span class="value"></span>
             <label>How easy is it to get started on this idea? </label>
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
-          <fieldset class="p-operational-complexity">
+          <fieldset class="p-feedback">
             <span class="value"></span>
             <label>What is the early market feedback from customers?</label>
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
-          <fieldset class="p-feature-value">
+          <fieldset class="p-acuity">
             <span class="value"></span>
             <label
               >How acute is this problem? (ranging from no one cares about it to
@@ -54,9 +54,14 @@
             >
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
-          <fieldset class="p-negative-impact">
+          <fieldset class="p-scalibility">
                 <span class="value"></span>
                 <label>How scalable is this business? </label>
+                <input type="range" min="1" max="10" step="0.5" value="5.5" />
+            </fieldset>
+            <fieldset class="p-barrier">
+                <span class="value"></span>
+                <label>How high is the barrier to entry?</label>
                 <input type="range" min="1" max="10" step="0.5" value="5.5" />
             </fieldset>
         </form>
@@ -114,22 +119,13 @@
     <script>
       (function () {
         const params = [
-          { weight: 0.1, value: 5.5, negative: false, name: "p-users" },
-          { weight: 0.2, value: 5.5, negative: false, name: "p-user-value" },
-          { weight: 0.2, value: 5.5, negative: false, name: "p-feature-value" },
-          { weight: 0.15, value: 5.5, negative: true, name: "p-effort" },
-          {
-            weight: 0.2,
-            value: 5.5,
-            negative: true,
-            name: "p-negative-impact",
-          },
-          {
-            weight: 0.15,
-            value: 5.5,
-            negative: true,
-            name: "p-operational-complexity",
-          },
+          { weight: 0.15, value: 5.5, negative: false, name: "p-idea" },
+          { weight: 0.2, value: 5.5, negative: false, name: "p-founder-fit" },
+          { weight: 0.1, value: 5.5, negative: false, name: "p-difficulty" },
+          { weight: 0.15, value: 5.5, negative: false, name: "p-feedback" },
+          { weight: 0.2, value: 5.5, negative: false, name: "p-acuity" },
+          { weight: 0.1, value: 5.5, negative: false, name: "p-scalibility" },
+          { weight: 0.1, value: 5.5, negative: true, name: "p-barrier" },
         ];
 
         params.forEach((p, n) => {
