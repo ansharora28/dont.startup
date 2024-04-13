@@ -1,6 +1,6 @@
 # Launch or don't launch?
 
-Visit [**dont.startup**](https://dont.startup).
+Visit [**dont.startup**]([https://dont.startup](https://ansharora28.github.io/dont.startup/)).
 
 The allure of entrepreneurship has never been greater. Startups are one of the very few ways to make it (really) big in life. There's a LOT of content on the whys and hows of starting your venture. Almost everyone seems to have a vision for the next big thing - a product or service that will change the world.
 
