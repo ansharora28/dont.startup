@@ -31,8 +31,8 @@
           <fieldset class="p-founder-fit">
             <span class="value"></span>
             <label
-              >Do you have founder market fit? (Deep knowledge and Understanding
-              of the market, and some work experience)</label
+              >Do you have founder market fit? (deep knowledge and understanding
+              of this market, with some work experience)</label
             >
             <input type="range" min="1" max="10" step="0.5" value="5.5" />
           </fieldset>
@@ -63,6 +63,26 @@
                 <span class="value"></span>
                 <label>How high is the barrier to entry?</label>
                 <input type="range" min="1" max="10" step="0.5" value="5.5" />
+            </fieldset>
+            <fieldset class="p-space">
+                <span class="value"></span>
+                <label>Is this a good idea space? (It is easier to pivot when your solution is in a class of closely related ideas. eg. Vertical SAAS)</label>
+                <input type="range" min="0" max="1" step="1" />
+            </fieldset>
+            <fieldset class="p-cofounder">
+                <span class="value"></span>
+                <label>Do you have a co-founder?</label>
+                <input type="range" min="0" max="1" step="1" />
+            </fieldset>
+            <fieldset class="p-commitment">
+                <span class="value"></span>
+                <label>Do you want to work on this, for years?</label>
+                <input type="range" min="0" max="1" step="1" />
+            </fieldset>
+            <fieldset class="p-risk">
+                <span class="value"></span>
+                <label>Can you afford to fail if this doesn't work out?</label>
+                <input type="range" min="0" max="1" step="1" />
             </fieldset>
         </form>
         <div class="text-center">
@@ -121,11 +141,15 @@
         const params = [
           { weight: 0.15, value: 5.5, negative: false, name: "p-idea" },
           { weight: 0.2, value: 5.5, negative: false, name: "p-founder-fit" },
-          { weight: 0.1, value: 5.5, negative: false, name: "p-difficulty" },
-          { weight: 0.15, value: 5.5, negative: false, name: "p-feedback" },
-          { weight: 0.2, value: 5.5, negative: false, name: "p-acuity" },
+          { weight: 0.05, value: 5.5, negative: false, name: "p-difficulty" },
+          { weight: 0.1, value: 5.5, negative: false, name: "p-feedback" },
+          { weight: 0.1, value: 5.5, negative: false, name: "p-acuity" },
           { weight: 0.1, value: 5.5, negative: false, name: "p-scalibility" },
-          { weight: 0.1, value: 5.5, negative: true, name: "p-barrier" },
+          { weight: 0.05, value: 5.5, negative: true, name: "p-barrier" },
+          { weight: 0.05, value: 0, negative: false, name: "p-space" },
+          { weight: 0.05, value: 0, negative: false, name: "p-cofounder" },
+          { weight: 0.05, value: 0, negative: false, name: "p-commitment" },
+          { weight: 0.1, value: 0, negative: false, name: "p-risk" },
         ];
 
         params.forEach((p, n) => {
